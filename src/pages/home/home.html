@@ -1,14 +1,47 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons start>
+          </ion-buttons>
+          <ion-title>Libros</ion-title>
+          <ion-buttons end>
+            <button ion-button icon-only color="royal" (click)= "clickAgregar()">
+              <ion-icon name="add"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-toolbar>
+        </ion-header>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-card style = "border-radius: 10px" *ngFor= "let l of libros">
+      <ion-col item-start>
+          <img [src] = l.portada>
+      </ion-col>
+      <h2 (click)= "clickTitulo()">{{l.titulo}}</h2> 
+      <p (click)= "clickAutor()">{{l.autor}}</p>
+      <p>{{l.editorial}}</p>
+      <p>{{l.resena}}</p>
+      <ion-row>
+        <ion-icon name = "star" *ngFor= "let s of l.valoracion"></ion-icon>
+      </ion-row>
+  </ion-card>
+  <ion-card>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../assets/avatar.png">
+      </ion-avatar>
+      <h2>Leonardo Briseño</h2>
+    </ion-item>
+    <ion-card-content>
+      <p>Es un libro muy bueno de misterio y romance</p>
+    </ion-card-content>
+    <ion-row>
+    </ion-row>
+  </ion-card>
 </ion-content>

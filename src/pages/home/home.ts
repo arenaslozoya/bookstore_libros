@@ -7,6 +7,14 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+  libros = [{
+    autor: "Paula Hawkins",
+    titulo: "La chica del tren",
+    editorial: "Booket",
+    resena: "",
+    portada: "../assets/LCDT.jpg",
+    valoracion: [1,2,3,4]
+  }];
   constructor(public navCtrl: NavController) {
 
   }
